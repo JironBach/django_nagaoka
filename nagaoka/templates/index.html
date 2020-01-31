@@ -2,21 +2,5 @@
 
 {% block content %}
   <form method="post" action="">
-    <table border="1">
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>name</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for item in items %}
-          <tr>
-            <td>{{ item.id }}</td>
-            <td>{{ item.name }}</td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
   </form>
 {% endblock %}

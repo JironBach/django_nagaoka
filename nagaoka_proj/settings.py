@@ -57,7 +57,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'nagaoka', 'templates', ),
-            os.path.join(BASE_DIR, 'nagaoka', 'templates', 'wix_files'),
+            os.path.join(BASE_DIR, 'nagaoka', 'templates', 'wikipedia'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -66,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.static',
             ],
         },
     },
@@ -80,7 +81,7 @@ WSGI_APPLICATION = 'nagaoka_proj.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'nagaoka2_dev',
+        'NAME': 'nagaoka_dev',
         'USER': 'root',
         'PASSWORD': 'tangerine3',
         'HOST': '127.0.0.1',
