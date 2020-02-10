@@ -20,6 +20,10 @@ RUN pip install -r requirements.txt
 #RUN /etc/init.d/mysql start
 #RUN update-locale LANG=ja_JP.UTF-8
 
-EXPOSE 18000
-EXPOSE 28000
+EXPOSE 8000
+EXPOSE 8001
+EXPOSE 8002
+EXPOSE 8003
+EXPOSE 8004
+EXPOSE 8005
 
