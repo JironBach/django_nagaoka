@@ -34,10 +34,10 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'nagaoka.apps.NagaokaConfig',
+    'django.contrib.sessions',
 ]
 
 MIDDLEWARE = [
@@ -84,8 +84,8 @@ DATABASES = {
         'NAME': 'nagaoka_dev',
         'USER': 'root',
         'PASSWORD': 'tangerine3',
-        'HOST': '127.0.0.1',
-        'PORT': '3307',
+        'HOST': 'localhost',
+        'PORT': '3306',
 
     }
 }
