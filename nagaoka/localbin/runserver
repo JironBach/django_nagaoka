@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# local run
+#source ~/nagaoka_proj/nagaoka/localbin/env
+# docker run
+source ~/bin/python/test/nagaoka_proj/nagaoka/localbin/env
+git config --global user.email "junshimo2@gmail.com"
+git config --global user.name "JironBach"
+
+
+virtualenv activate
+
+pip3 install django whitenoise brotli mysqlclient
+#conda install brotli
+
+#rm -f ~/bin/python/test/nagaoka_proj/requirements.txt
+#conda freeze > ~/bin/python/test/nagaoka_proj/requirements.txt
+
+#python3 ~/nagaoka_proj/manage.py createsuperuser
+
+#python3 ~/bin/python/test/nagaoka_proj/manage.py runserver 0.0.0.0:8000
+PYTHONIOENCODING=utf-8 gunicorn nagaoka_proj.wsgi --bind 0.0.0.0:8000
+
