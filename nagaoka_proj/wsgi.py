@@ -16,6 +16,6 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'nagaoka_proj.settings')
 application = get_wsgi_application()
 
 # settings for Heroku
-from whitenoise.django import DjangoWhiteNoise
-application = DjangoWhiteNoise(application)
+#from whitenoise.django import DjangoWhiteNoise
+#application = DjangoWhiteNoise(application)
 
