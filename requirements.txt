@@ -27,3 +27,5 @@ virtualenv==20.0.4
 virtualenv-clone==0.5.3
 whitenoise==5.0.1
 zipp==3.0.0
+mysqlclient
+
