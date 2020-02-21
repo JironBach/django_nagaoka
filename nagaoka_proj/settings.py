@@ -129,9 +129,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'nagaoka/static/'),
-)
+#STATICFILES_DIRS = (
+#    os.path.join(BASE_DIR, 'static/'),
+#)
 LOGIN_URL='admin:login'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_URL='admin:login'
@@ -145,7 +145,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 ALLOWED_HOSTS = ['*']
 
-STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = 'static'
 
 DEBUG = False
 
