@@ -1,3 +1,12 @@
+# requirements.txtの更新
+pip3 freeze > requirements.txt後に
+requirements.txtのgnupgとgpgをコメントアウト
+requirements.txtにmysqlclientを追加。
+
+https://nagaoka-django.herokuapp.com/
+
+
+# dockerのセットアップ
 docker build -t junshimo2/nagaoka_django .
 
 docker tag junshimo2/nagaoka_django:latest junshimo2/nagaoka_django:tagname
