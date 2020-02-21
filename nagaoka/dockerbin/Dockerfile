@@ -15,7 +15,12 @@ RUN apt-get -y update \
     #&& apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
 WORKDIR /code
 ADD requirements.txt /code
-RUN pip install -r requirements.txt
+
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
+    python get-pip.py
+RUN pip3 install -r requirements.txt
+#RUN pip3 install conda
+#RUN conda install -r requirements.txt
 
 #RUN /etc/init.d/mysql start
 #RUN update-locale LANG=ja_JP.UTF-8
