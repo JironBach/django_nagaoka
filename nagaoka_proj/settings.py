@@ -138,8 +138,10 @@ LOGIN_URL='admin:login'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # settings for Heroku
-import dj_database_url
-DATABASES['default'] = dj_database_url.config()
+#import dj_database_url
+#DATABASES['default'] = dj_database_url.config()
+#import MySQLdb
+#import pymysql
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 

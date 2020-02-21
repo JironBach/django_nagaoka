@@ -15,8 +15,13 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'nagaoka_proj.settings')
 
 application = get_wsgi_application()
 
+
 # settings for Heroku
 from django.core.wsgi import get_wsgi_application
 
 application = get_wsgi_application()
+
+# settings for mysql
+import pymysql
+pymysql.install_as_MySQLdb()
 
