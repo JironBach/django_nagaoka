@@ -1,8 +1,80 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-  <form method="post" action="">
-    <iframe id="ytplayer" type="text/html" width="640" height="360"
-  src="https://www.youtube.com/embed/DkfpiNNpBFU?autoplay=0" frameborder="0"></iframe>
-  </form>
+  <table width="100%" height="100%">
+    <tr>
+      <!-- メニュー表示用のセル -->
+      <td valign="top" width="200">
+        <div style="height: 100%; overflow: auto">
+          <div class="logo">
+            <a href="/"><img src="{% static 'wikipedia/img/delphi.png' %}" alt="logo"></a>
+          </div>
+          <div class="navigation">
+            <font size="+1">
+              <ul>
+                <li><a href="#">Main page</a></li>
+                <li><a href="#">Contents</a></li>
+                <li><a href="#">Featured content</a></li>
+              </ul>
+            </font>
+            <hr/>
+            <h3>Interaction</h3>
+            <ul>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Portal</a></li>
+            </ul>
+            <h3>Interaction</h3>
+            <ul>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Portal</a></li>
+            </ul>
+            <h3>Interaction</h3>
+            <ul>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Portal</a></li>
+            </ul>
+            <h3>Interaction</h3>
+            <ul>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Portal</a></li>
+            </ul>
+          </div>
+        </div>
+      </td>
+      <!-- コンテンツ表示用のセル -->
+      <td valign="top">
+        <div class="article">
+          <h1>長岡先生の授業が聞ける 高校数学の教科書</h1>
+          <div class="articleRight">
+            <div class="articleRightInner">
+              <img src="{% static 'wikipedia/img/pencil.jpg' alt='pencil' %}" />
+            </div>
+            さあ授業を始めよう！
+          </div>
+
+          <form method="post" action="">
+            <iframe id="ytplayer" type="text/html" width="640" height="360"
+          src="https://www.youtube.com/embed/DkfpiNNpBFU?autoplay=0" frameborder="0"></iframe>
+          </form>
+
+          {% include '_footer.html' %}
+        </div>
+        <div class="pagefooter">
+          This page was last edited on 29.07.2017 | Template by <a href="http://html5-templates.com/" target="_blank" rel="nofollow">HTML5 Templates</a> <!-- Please leave this link unchanged -->
+          <div class="footerlinks">
+            <a href="#">Privacy policy</a> <a href="#">About</a> <a href="#">Terms and conditions</a> <a href="#">Cookie statement</a> <a href="#">Developers</a>
+          </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script src="script.js"></script>
+      </td>
+    </tr>
+  </table>
 {% endblock %}

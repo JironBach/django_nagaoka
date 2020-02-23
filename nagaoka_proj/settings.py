@@ -134,8 +134,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 #)
 LOGIN_URL='admin:login'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-LOGIN_URL='admin:login'
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # settings for Heroku
 #import dj_database_url
@@ -149,10 +147,35 @@ ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = 'static'
 
-DEBUG = False
+DEBUG = True
+
+LOGGING = {
+    'version': 1,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    }
+}
 
 try:
     from .local_settings import *
 except ImportError:
     pass
-
