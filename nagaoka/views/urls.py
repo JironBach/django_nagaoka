@@ -19,4 +19,7 @@ urlpatterns = [
 
     path('login', IndexView.login, name='login'),
     path('logout/', IndexView.logout, name='logout'),
+
+    path('index/', Subject1View.as_view(), name='subject1'),
+    path('index/<int:id>/', Subject1View.index, name='subject1'),
 ]
