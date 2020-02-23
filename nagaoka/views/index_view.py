@@ -4,6 +4,11 @@ from django.shortcuts import render
 from nagaoka.models.app_user import AppUser
 from nagaoka.models.subject1 import Subject1
 from nagaoka.models.subject2 import Subject2
+from nagaoka.models.lecture_item import LectureItem
+
+#from django.urls import reverse
+#from urllib.parse import urlencode
+from django.shortcuts import redirect
 
 import logging
 
@@ -11,15 +16,15 @@ class IndexView(View):
     def get(self, request):
         if 'login_user' in request.session:
             login_user = request.session['login_user']
-            subject1s = Subject1.objects.all()
-            subject2s = Subject2.objects.all()
+            if login_user != '':
+                subject1s = Subject1.objects.all()
+            else:
+                subject1s = None
         else:
             login_user = ''
         items = {
-            'items': AppUser.objects.all(),
             'login_user': login_user,
             'subject1s': subject1s,
-            'subject2s': subject2s,
         }
 
         return render(request, 'index.html', items)
@@ -35,7 +40,13 @@ class IndexView(View):
         if request.POST.getlist('name', None):
             logger.debug("debug : self.request.POST.getlist() = " + request.POST.getlist('name', None)[0])
 
-        return IndexView.get(IndexView, request, *args, **kwargs)
+        # リダイレクト先のパスを取得する
+        #redirect_url = reverse('nagaoka:index_view')
+        # パラメータのdictをurlencodeする。複数のパラメータを含めることも可能
+        #parameters = urlencode({'param1': 'this_is_param1', 'param2': 123})
+        # URLにパラメータを付与する
+        #url = f'{redirect_url}?{parameters}'
+        return redirect('/')
 
     def logout(request):
         request.session['login_user'] = ''
@@ -44,4 +55,4 @@ class IndexView(View):
             'login_user': ''
         }
 
-        return render(request, 'index.html', items)
+        return redirect('/')

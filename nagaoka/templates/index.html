@@ -11,7 +11,7 @@
             <a href="/"><img src="{% static 'wikipedia/img/delphi.png' %}" alt="logo"></a>
           </div>
           <div class="navigation">
-            <font size="+1">
+            <font size="-1">
               <ul>
                 {% for subject1 in subject1s %}
                   <li><a href="{{ subject1.link }}">{{ subject1.name }}</a></li>
@@ -19,11 +19,13 @@
               </ul>
             </font>
             <hr/>
-            {% for subject2 in subject2s %}
-              <ul>
-                <li><a href="{{ subject2.link }}">{{ subject2.name }}</a></li>
-              </ul>
-            {% endfor %}
+            <font size="-1">
+              {% for subject2 in subject2s %}
+                <ul>
+                  <li><a href="{{ subject2.link }}">{{ subject2.name }}</a></li>
+                </ul>
+              {% endfor %}
+            </font>
           </div>
         </div>
       </td>
@@ -40,8 +42,11 @@
           </div>
 
           {% if login_user != '' %}
-            <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/DkfpiNNpBFU?autoplay=0" frameborder="0"></iframe>
-            <br/>
+            {% if lecture_item != None %}
+              {{ lecture_item.name }}
+              <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/{{  lecture_item.link }}?autoplay=0" frameborder="0"></iframe>
+              <br/>
+            {% endif %}
             <a href="/logout">ログアウト</a>
           {% else %}
             <form method="post" action="/login">
