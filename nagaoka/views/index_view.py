@@ -29,3 +29,12 @@ class IndexView(View):
         if request.POST.getlist('name', None):
             logger.debug("debug : self.request.POST.getlist() = " + request.POST.getlist('name', None)[0])
         return IndexView.get(IndexView, request, *args, **kwargs)
+
+    def logout(request):
+        request.session['login_user'] = ''
+        items = {
+            'items': AppUser.objects.all(),
+            'login_user': ''
+        }
+
+        return render(request, 'index.html', items)

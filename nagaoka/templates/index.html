@@ -52,7 +52,7 @@
       <td valign="top">
         <div class="article">
           <h1>長岡先生の授業が聞ける 高校数学の教科書</h1>
-          <h2>{{ login_user }}</h2>
+          <h3>{{ login_user }}</h3>
           <div class="articleRight">
             <div class="articleRightInner">
               <img src="{% static 'wikipedia/img/pencil.jpg' alt='pencil' %}" />
@@ -62,8 +62,10 @@
 
           {% if login_user != '' %}
             <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/DkfpiNNpBFU?autoplay=0" frameborder="0"></iframe>
+            <br/>
+            <a href="/logout">ログアウト</a>
           {% else %}
-            <form method="post" action="login">
+            <form method="post" action="/login">
               {% csrf_token %}
               <br>
               <input type="text" name="name">

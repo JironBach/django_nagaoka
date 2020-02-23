@@ -18,4 +18,5 @@ urlpatterns = [
     path('subject2s/', Subject2View.as_view(), name='subject2s'),
 
     path('login', IndexView.login, name='login'),
+    path('logout/', IndexView.logout, name='logout'),
 ]
