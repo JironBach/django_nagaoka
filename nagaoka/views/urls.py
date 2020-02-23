@@ -22,4 +22,7 @@ urlpatterns = [
 
     path('index/', Subject1View.as_view(), name='subject1'),
     path('index/<int:id>/', Subject1View.index, name='subject1'),
+
+    path('subject2/<int:subject1_id>/lecture_item/', LectureItemView.as_view(), name='lecture_item'),
+    path('subject2/<int:subject1_id>/lecture_item/<int:subject2_id>/', LectureItemView.index, name='lecture_item'),
 ]
