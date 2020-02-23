@@ -17,5 +17,5 @@ urlpatterns = [
     path('subject1s/', Subject1View.as_view(), name='subject1s'),
     path('subject2s/', Subject2View.as_view(), name='subject2s'),
 
-    path('index/', IndexView.as_view(), name='index'),
+    path('login', IndexView.login, name='login'),
 ]
