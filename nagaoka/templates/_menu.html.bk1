@@ -1,0 +1,39 @@
+<div style="height: 100%; overflow: auto">
+  <div class="logo">
+    <a href="/"><img src="{% static 'wikipedia/img/delphi.png' %}" alt="logo"></a>
+  </div>
+  <div class="navigation">
+    <font size="+1">
+      <ul>
+        <li><a href="#">Main page</a></li>
+        <li><a href="#">Contents</a></li>
+        <li><a href="#">Featured content</a></li>
+      </ul>
+    </font>
+    <hr/>
+    <h3>Interaction</h3>
+    <ul>
+      <li><a href="#">Help</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Portal</a></li>
+    </ul>
+    <h3>Interaction</h3>
+    <ul>
+      <li><a href="#">Help</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Portal</a></li>
+    </ul>
+    <h3>Interaction</h3>
+    <ul>
+      <li><a href="#">Help</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Portal</a></li>
+    </ul>
+    <h3>Interaction</h3>
+    <ul>
+      <li><a href="#">Help</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Portal</a></li>
+    </ul>
+  </div>
+</div>

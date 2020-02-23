@@ -1,0 +1,6 @@
+junshimoa
+# ssh
+ssh -i ~/.ssh/aws-django.pem ubuntu@ec2-3-18-163-12.us-east-2.compute.amazonaws.com
+
+# web
+http://ec2-3-18-163-12.us-east-2.compute.amazonaws.com/
