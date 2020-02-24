@@ -18,6 +18,7 @@ pip3 install django whitenoise brotli mysqlclient
 
 #python3 ~/nagaoka_proj/manage.py createsuperuser
 
+#python3 ~/nagaoka_proj/manage.py shell
 python3 ~/nagaoka_proj/manage.py runserver 0.0.0.0:8000 #2>&1 | tee django.log
 #PYTHONIOENCODING=utf-8 gunicorn nagaoka_proj.wsgi --bind 0.0.0.0:8000
 

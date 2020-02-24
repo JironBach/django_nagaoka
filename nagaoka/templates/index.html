@@ -20,11 +20,21 @@
             </font>
             <hr/>
             <font size="-1">
-              {% for subject2 in subject2s %}
-                <ul>
-                  <li><a href="{{ subject2.link }}">{{ subject2.name }}</a></li>
-                </ul>
-              {% endfor %}
+              <form method="post" name="already">
+                {% for already in alreadies %}
+                  <ul>
+                    <li>
+                      <a href="{{ already.link }}">{{ already.name }}</a>
+                      {% if already.checked == 1 %}
+                        <input type="checkbox" name='already' checked="checked">
+                      {% else %}
+                        <input type="checkbox" name='already'>
+                      {% endif %}
+                      <input type="submit" value="既読">
+                    </li>
+                  </ul>
+                {% endfor %}
+              </form>
             </font>
           </div>
         </div>

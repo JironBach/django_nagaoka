@@ -5,9 +5,6 @@ from nagaoka.models.app_user import AppUser
 from nagaoka.models.subject1 import Subject1
 from nagaoka.models.subject2 import Subject2
 from nagaoka.models.lecture_item import LectureItem
-
-#from django.urls import reverse
-#from urllib.parse import urlencode
 from django.shortcuts import redirect
 
 import logging
@@ -22,10 +19,16 @@ class IndexView(View):
                 subject1s = None
         else:
             login_user = ''
-        items = {
-            'login_user': login_user,
-            'subject1s': subject1s,
-        }
+
+        if login_user != '':
+            items = {
+                'login_user': login_user,
+                'subject1s': subject1s,
+            }
+        else:
+            items = {
+                'login_user': login_user,
+            }
 
         return render(request, 'index.html', items)
 
